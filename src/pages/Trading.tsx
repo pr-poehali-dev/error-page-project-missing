@@ -3,7 +3,9 @@ import { useState } from "react";
 const Trading = () => {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
-  const certs: { id: number; title: string; firm: string; amount: string; date: string; img?: string }[] = [];
+  const certs: { id: number; title: string; firm: string; amount: string; date: string; img?: string }[] = [
+    { id: 1, title: "Выплата #1", firm: "FTMO", amount: "$1,000", date: "Март 2026" },
+  ];
 
   return (
     <div style={{ background: "#0d0d0d", minHeight: "100vh", fontFamily: "'Oswald', sans-serif", color: "#fff" }}>
@@ -180,10 +182,7 @@ const Trading = () => {
                   {cert.img ? (
                     <img src={cert.img} alt={cert.title} style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <div className="tr-cert-placeholder">
-                      <div style={{ color: "#222", fontSize: "28px" }}>📄</div>
-                      <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: "#333", fontSize: "11px", letterSpacing: "2px" }}>СЕРТИФИКАТ</div>
-                    </div>
+                    <div className="tr-cert-placeholder" style={{ background: "#c00" }} />
                   )}
                   <div style={{ padding: "20px 20px 24px" }}>
                     <div style={{ fontWeight: 500, fontSize: "14px", marginBottom: "6px" }}>{cert.title}</div>
