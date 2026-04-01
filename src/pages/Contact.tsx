@@ -357,7 +357,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Правая колонка — форма */}
+          {/* Правая колонка — контакты */}
           <div>
             <div
               className="ct-fu5"
@@ -370,84 +370,141 @@ const Contact = () => {
                 marginBottom: "24px",
               }}
             >
-              Написать сообщение
+              Связаться напрямую
             </div>
 
-            {/* Форма */}
-            <form
-              className="ct-fu5"
-              onSubmit={(e) => e.preventDefault()}
-              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-            >
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "'IBM Plex Sans', sans-serif",
-                      color: "#333",
-                      fontSize: "10px",
-                      letterSpacing: "3px",
-                      textTransform: "uppercase",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    Имя
+            {/* Контактные карточки */}
+            <div className="ct-fu5" style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+              {/* Email */}
+              <a
+                href="mailto:al@example.com"
+                className="ct-contact-card email"
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+                    <div style={{
+                      width: "40px", height: "40px",
+                      border: "1px solid #1f1f1f",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#4a9eff", fontSize: "16px",
+                    }}>✉</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        color: "#666", fontSize: "10px",
+                        letterSpacing: "3px", textTransform: "uppercase",
+                        marginBottom: "4px",
+                      }}>Email</div>
+                      <div style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        color: "#ccc", fontSize: "16px",
+                        letterSpacing: "0.5px",
+                      }}>al@example.com</div>
+                    </div>
                   </div>
-                  <input className="ct-input" type="text" placeholder="Андрей" />
+                  <span className="ct-arrow" style={{ color: "#4a9eff", fontSize: "18px" }}>→</span>
                 </div>
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "'IBM Plex Sans', sans-serif",
-                      color: "#333",
-                      fontSize: "10px",
-                      letterSpacing: "3px",
-                      textTransform: "uppercase",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    Email
+              </a>
+
+              {/* Telegram */}
+              <a
+                href="https://t.me/username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ct-contact-card telegram"
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+                    <div style={{
+                      width: "40px", height: "40px",
+                      border: "1px solid #1f1f1f",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#229ed9", fontSize: "16px",
+                    }}>✈</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        color: "#666", fontSize: "10px",
+                        letterSpacing: "3px", textTransform: "uppercase",
+                        marginBottom: "4px",
+                      }}>Telegram</div>
+                      <div style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        color: "#ccc", fontSize: "16px",
+                        letterSpacing: "0.5px",
+                      }}>@username</div>
+                    </div>
                   </div>
-                  <input className="ct-input" type="email" placeholder="you@example.com" />
+                  <span className="ct-arrow" style={{ color: "#229ed9", fontSize: "18px" }}>→</span>
                 </div>
-              </div>
+              </a>
 
-              <div>
-                <div
-                  style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
-                    color: "#333",
-                    fontSize: "10px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Тема
+              {/* GitHub */}
+              <a
+                href="https://github.com/username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ct-contact-card github"
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+                    <div style={{
+                      width: "40px", height: "40px",
+                      border: "1px solid #1f1f1f",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#6e5494", fontSize: "16px",
+                    }}>⌥</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        color: "#666", fontSize: "10px",
+                        letterSpacing: "3px", textTransform: "uppercase",
+                        marginBottom: "4px",
+                      }}>GitHub</div>
+                      <div style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        color: "#ccc", fontSize: "16px",
+                        letterSpacing: "0.5px",
+                      }}>github.com/username</div>
+                    </div>
+                  </div>
+                  <span className="ct-arrow" style={{ color: "#6e5494", fontSize: "18px" }}>→</span>
                 </div>
-                <input className="ct-input" type="text" placeholder="Веб-разработка / Трейдинг / Другое" />
-              </div>
+              </a>
 
-              <div>
-                <div
-                  style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
-                    color: "#333",
-                    fontSize: "10px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Сообщение
+              {/* VK */}
+              <a
+                href="https://vk.com/username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ct-contact-card vk"
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+                    <div style={{
+                      width: "40px", height: "40px",
+                      border: "1px solid #1f1f1f",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#4a76a8", fontSize: "16px",
+                    }}>◈</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        color: "#666", fontSize: "10px",
+                        letterSpacing: "3px", textTransform: "uppercase",
+                        marginBottom: "4px",
+                      }}>ВКонтакте</div>
+                      <div style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        color: "#ccc", fontSize: "16px",
+                        letterSpacing: "0.5px",
+                      }}>vk.com/username</div>
+                    </div>
+                  </div>
+                  <span className="ct-arrow" style={{ color: "#4a76a8", fontSize: "18px" }}>→</span>
                 </div>
-                <textarea className="ct-input" rows={5} placeholder="Опишите вашу задачу или идею..." />
-              </div>
-
-              <button type="submit" className="ct-submit-btn">
-                Отправить сообщение →
-              </button>
-            </form>
+              </a>
+            </div>
 
             {/* Статистика доступности */}
             <div
