@@ -77,6 +77,46 @@ const Contact = () => {
           opacity: 1;
         }
 
+        .ct-input {
+          width: 100%;
+          background: #0d0d0d;
+          border: 1px solid #1a1a1a;
+          color: #fff;
+          padding: 14px 18px;
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: 14px;
+          outline: none;
+          transition: border-color 0.2s ease;
+          box-sizing: border-box;
+          resize: none;
+        }
+        .ct-input::placeholder { color: #333; }
+        .ct-input:focus { border-color: #4a9eff; }
+
+        .ct-submit-btn {
+          width: 100%;
+          background: transparent;
+          border: 1px solid #4a9eff;
+          color: #4a9eff;
+          padding: 16px;
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: 11px;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+        .ct-submit-btn:hover { background: #4a9eff; color: #000; }
+
+        .ct-stat-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 0;
+          border-bottom: 1px solid #141414;
+        }
+        .ct-stat-row:last-child { border-bottom: none; }
+
         .ct-tag {
           display: inline-block;
           border: 1px solid #1f1f1f;
@@ -317,7 +357,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Правая колонка — каналы связи */}
+          {/* Правая колонка — форма */}
           <div>
             <div
               className="ct-fu5"
@@ -330,272 +370,136 @@ const Contact = () => {
                 marginBottom: "24px",
               }}
             >
-              Каналы связи
+              Написать сообщение
             </div>
 
-            {/* Email */}
-            <a
-              href="mailto:andryushka-litvinov@internet.ru"
-              className="ct-contact-card email ct-fu5"
-              style={{ marginBottom: "12px", color: "inherit" }}
+            {/* Форма */}
+            <form
+              className="ct-fu5"
+              onSubmit={(e) => e.preventDefault()}
+              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  justifyContent: "space-between",
-                  marginBottom: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    border: "1px solid #1f1f1f",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                  }}
-                >
-                  ✉
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "'IBM Plex Sans', sans-serif",
+                      color: "#333",
+                      fontSize: "10px",
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Имя
+                  </div>
+                  <input className="ct-input" type="text" placeholder="Андрей" />
                 </div>
-                <span
-                  className="ct-arrow"
-                  style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
-                    fontSize: "18px",
-                    color: "#4a9eff",
-                  }}
-                >
-                  →
-                </span>
-              </div>
-              <div
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  color: "#444",
-                  fontSize: "10px",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}
-              >
-                Email
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  color: "#fff",
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  letterSpacing: "0.5px",
-                }}
-              >
-                andryushka-litvinov@internet.ru
-              </div>
-            </a>
-
-            {/* Telegram */}
-            <a
-              href="https://t.me/TrVesper"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ct-contact-card telegram ct-fu6"
-              style={{ marginBottom: "12px", color: "inherit" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  justifyContent: "space-between",
-                  marginBottom: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    border: "1px solid #1f1f1f",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                  }}
-                >
-                  ✈
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "'IBM Plex Sans', sans-serif",
+                      color: "#333",
+                      fontSize: "10px",
+                      letterSpacing: "3px",
+                      textTransform: "uppercase",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Email
+                  </div>
+                  <input className="ct-input" type="email" placeholder="you@example.com" />
                 </div>
-                <span
-                  className="ct-arrow"
-                  style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
-                    fontSize: "18px",
-                    color: "#229ed9",
-                  }}
-                >
-                  →
-                </span>
               </div>
-              <div
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  color: "#444",
-                  fontSize: "10px",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}
-              >
-                Telegram
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  color: "#fff",
-                  fontSize: "22px",
-                  fontWeight: 400,
-                  letterSpacing: "0.5px",
-                }}
-              >
-                @TrVesper
-              </div>
-              <div
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  color: "#444",
-                  fontSize: "12px",
-                  marginTop: "6px",
-                }}
-              >
-                Предпочтительный способ связи
-              </div>
-            </a>
 
-            {/* GitHub */}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ct-contact-card github ct-fu7"
-              style={{ marginBottom: "12px", color: "inherit" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  justifyContent: "space-between",
-                  marginBottom: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    border: "1px solid #1f1f1f",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                  }}
-                >
-                  ⌥
-                </div>
-                <span
-                  className="ct-arrow"
-                  style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
-                    fontSize: "18px",
-                    color: "#6e5494",
-                  }}
-                >
-                  →
-                </span>
-              </div>
-              <div
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  color: "#444",
-                  fontSize: "10px",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}
-              >
-                GitHub
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  color: "#fff",
-                  fontSize: "22px",
-                  fontWeight: 400,
-                }}
-              >
-                github.com/TrVesper
-              </div>
-            </a>
-
-            {/* Локация */}
-            <div
-              className="ct-fu7"
-              style={{
-                border: "1px solid #141414",
-                padding: "20px 28px",
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-              }}
-            >
-              <div
-                style={{
-                  width: "36px",
-                  height: "36px",
-                  border: "1px solid #1f1f1f",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "16px",
-                  flexShrink: 0,
-                }}
-              >
-                ◎
-              </div>
               <div>
                 <div
                   style={{
                     fontFamily: "'IBM Plex Sans', sans-serif",
-                    color: "#444",
+                    color: "#333",
                     fontSize: "10px",
                     letterSpacing: "3px",
                     textTransform: "uppercase",
-                    marginBottom: "4px",
+                    marginBottom: "8px",
                   }}
                 >
-                  Location
+                  Тема
                 </div>
-                <div
-                  style={{
-                    fontFamily: "'Oswald', sans-serif",
-                    color: "#888",
-                    fontSize: "16px",
-                    fontWeight: 400,
-                  }}
-                >
-                  Россия / Оренбург
-                </div>
+                <input className="ct-input" type="text" placeholder="Веб-разработка / Трейдинг / Другое" />
               </div>
-              <div style={{ marginLeft: "auto" }}>
-                <span
+
+              <div>
+                <div
                   style={{
                     fontFamily: "'IBM Plex Sans', sans-serif",
                     color: "#333",
-                    fontSize: "11px",
-                    letterSpacing: "1px",
+                    fontSize: "10px",
+                    letterSpacing: "3px",
+                    textTransform: "uppercase",
+                    marginBottom: "8px",
                   }}
                 >
-                  UTC+5
-                </span>
+                  Сообщение
+                </div>
+                <textarea className="ct-input" rows={5} placeholder="Опишите вашу задачу или идею..." />
               </div>
+
+              <button type="submit" className="ct-submit-btn">
+                Отправить сообщение →
+              </button>
+            </form>
+
+            {/* Статистика доступности */}
+            <div
+              className="ct-fu7"
+              style={{
+                border: "1px solid #1a1a1a",
+                padding: "24px 28px",
+                marginTop: "20px",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif",
+                  color: "#333",
+                  fontSize: "10px",
+                  letterSpacing: "4px",
+                  textTransform: "uppercase",
+                  marginBottom: "16px",
+                }}
+              >
+                Доступность
+              </div>
+
+              {[
+                { label: "Время ответа", value: "до 24 часов" },
+                { label: "Рабочие дни", value: "Пн — Пт" },
+                { label: "Часовой пояс", value: "UTC+5" },
+                { label: "Локация", value: "Россия / Оренбург" },
+              ].map((item, i) => (
+                <div key={i} className="ct-stat-row">
+                  <span
+                    style={{
+                      fontFamily: "'IBM Plex Sans', sans-serif",
+                      color: "#444",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Oswald', sans-serif",
+                      color: "#888",
+                      fontSize: "14px",
+                      fontWeight: 400,
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    {item.value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
